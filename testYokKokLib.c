@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "pointerList.c"
+//#include "pointerList.c"
+//#include "arrStack.c"
+#include "pointerStack.c"
 #include <string.h>
 void ignore(char *str)
 {
@@ -25,9 +27,11 @@ int main()
 {
 	char *fileName = "data.txt";
 	int arr[100], n = 0;
-	List l;
+//	List l;
+	Stack s;
 	int i;
-	makenullList(&l);
+//	makenullList(&l);
+	makenullStack(&s);
 
 	readFile(fileName, arr, &n);
 	printf("Du lieu tu file: \n");
@@ -39,16 +43,19 @@ int main()
 
 	for (i = 0; i < n; i++)
 	{
-		insertList(arr[i], endList(l), &l);
+//		insertList(arr[i], endList(l), &l);
+		push(arr[i], &s);
 	}
-	printf("Du lieu tu List: \n");
-	printList(l);
-	sort(&l, 1);
-	printf("Du lieu da sap xep: \n");
-	printList(l);
-	distinct(&l);
-	printf("Du lieu da loc trung: \n");
-	printList(l);
+//	printf("Du lieu tu List: \n");
+	printf("Du lieu tu Stack: \n");
+	printStack(s);
+//	printList(l);
+//	sort(&l, 1);
+//	printf("Du lieu da sap xep: \n");
+//	printList(l);
+//	distinct(&l);
+//	printf("Du lieu da loc trung: \n");
+//	printList(l);
 
 	return 0;
 }

@@ -30,6 +30,17 @@ Position previous(Position p, List l){
 ElementType retrieve(Position p, List l){
 	return l.Elements[p-1];
 }
+Position locate(ElementType x, List l){
+	Position p= first(l), e= endList(l);
+	int found =0;
+	while(p-!=e && !found){
+		if(retrieve(p, l)==x){
+			found=1;
+		}else{
+			p= p->Next;
+		}
+	}
+
 void insertList(ElementType x, Position p, List *l){
 	if(l->Last==MaxLength){
 		printf("Danh sach day!\n");
