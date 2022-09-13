@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "arrList.c"
+#include "pointerList.c"
 #include <string.h>
 void ignore(char *str)
 {
