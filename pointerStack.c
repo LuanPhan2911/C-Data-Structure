@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 
-typedef int ElementType;
+typedef char  ElementType;
  struct  Node{
 	ElementType Element;
 	struct Node *Top;

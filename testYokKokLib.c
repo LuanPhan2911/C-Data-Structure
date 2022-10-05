@@ -1,7 +1,8 @@
 #include <stdio.h>
 //#include "pointerList.c"
 //#include "arrStack.c"
-#include "pointerStack.c"
+//#include "pointerStack.c"
+#include "arrCycleQueue.c";
 #include <string.h>
 void ignore(char *str)
 {
@@ -26,14 +27,11 @@ void readFile(char *fileName, int *arr, int *n)
 int main()
 {
 	char *fileName = "data.txt";
-	int arr[100], n = 0;
-//	List l;
-	Stack s;
+	Queue q;
 	int i;
-//	makenullList(&l);
-	makenullStack(&s);
-
+	int arr[100], n = 0;
 	readFile(fileName, arr, &n);
+	makenullQueue(&q);
 	printf("Du lieu tu file: \n");
 	for (i = 0; i < n; i++)
 	{
@@ -43,19 +41,12 @@ int main()
 
 	for (i = 0; i < n; i++)
 	{
-//		insertList(arr[i], endList(l), &l);
-		push(arr[i], &s);
+		enQueue(arr[i], &q);
 	}
-//	printf("Du lieu tu List: \n");
-	printf("Du lieu tu Stack: \n");
-	printStack(s);
-//	printList(l);
-//	sort(&l, 1);
-//	printf("Du lieu da sap xep: \n");
-//	printList(l);
-//	distinct(&l);
-//	printf("Du lieu da loc trung: \n");
-//	printList(l);
 
+	while(!emptyQueue(q)){
+		printf("%d ", front(q));
+		deQueue(&q);
+	}
 	return 0;
 }
