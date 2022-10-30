@@ -33,7 +33,7 @@ ElementType retrieve(Position p, List l){
 Position locate(ElementType x, List l){
 	Position p= first(l), e= endList(l);
 	int found =0;
-	while(p-!=e && !found){
+	while(p!=e && !found){
 		if(retrieve(p, l)==x){
 			found=1;
 		}else{
